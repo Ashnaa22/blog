@@ -1,0 +1,61 @@
+{% load static %}
+
+<html>
+
+<head>
+    <title>BLOG</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <center>BLOGS</center>
+        </h1>
+
+        <div class="navbar">
+            <ul>
+                <li>
+                    <h4><a href=" {% url 'home' %}">HOME</a></h4>
+                </li>
+                <li>
+                    <h4><a href="">ABOUT</a></h4>
+                </li>
+                <li>
+                    <h4><a href="">MORE</a></h4>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li>
+                    <p>Hi {{ user.username }}!</p>
+                </li>
+
+                <li>
+                    <p><a href="{% url 'logout' %}">logout</a></p>
+                </li>
+                {% else %}
+                <p>You are not logged in.</p>
+                <a href="{% url 'login' %}">Log In</a>
+                <a href="{% url 'signup' %}">&nbsp;&nbsp;&nbsp;&nbsp;Sign Up</a>
+
+                {% endif %}
+
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <a href="{% url 'post_new' %}">+ New Blog Post</a>
+        </div>
+
+
+
+    </header>
+
+
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+
+</html>

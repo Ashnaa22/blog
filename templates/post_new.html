@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<h1>New Post</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="frmdsply">{{form.as_p}}</div>
+
+    <input type="submit" value="Save">
+</form>
+{% endblock content %}

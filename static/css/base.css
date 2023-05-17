@@ -1,0 +1,30 @@
+center {
+    background-color: white;
+    color: black;
+    border-bottom: 10px;
+    border-color: white;
+}
+
+.navbar a {
+    background-color: black;
+    color: yellow;
+}
+
+.navbar {
+    background-color: black;
+
+}
+
+.post-entry {
+    background-color: chartreuse;
+}
+
+div {}
+
+body {
+    background-color: rosybrown;
+}
+
+.frdsply {
+    color: white;
+}
